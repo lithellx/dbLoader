@@ -16,9 +16,9 @@ CONFIG += c++11
 # deprecated API in order to know how to port your code away from it.
 DEFINES += QT_DEPRECATED_WARNINGS
 
-INCLUDEPATH += C:/curl/include
-LIBS += C:/curl/lib/libcurl.a
-LIBS += C:/curl/lib/libcurl.dll.a
+# INCLUDEPATH += C:/curl/include - Gereksiz kısım
+# LIBS += C:/curl/lib/libcurl.a - Gereksiz kısım
+# LIBS += C:/curl/lib/libcurl.dll.a - Gereksiz kısım
 
 # You can also make your code fail to compile if it uses deprecated APIs.
 # In order to do so, uncomment the following line.
