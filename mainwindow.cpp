@@ -13,7 +13,6 @@
 #include <stdio.h>
 #include <QtSql>
 #include <QtSql/QSqlDatabase>
-#include <curl/curl.h>
 #include <QtNetwork/QNetworkAccessManager>
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QNetworkRequest>
