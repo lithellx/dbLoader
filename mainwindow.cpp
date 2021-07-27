@@ -6,11 +6,13 @@
 
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+
+#include <stdio.h>
+
 #include <QMessageBox>
 #include <QUrl>
 #include <QDesktopServices>
 #include <QClipboard>
-#include <stdio.h>
 #include <QtSql>
 #include <QtSql/QSqlDatabase>
 #include <QtNetwork/QNetworkAccessManager>
