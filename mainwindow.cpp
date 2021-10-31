@@ -20,8 +20,8 @@
 #include <QtNetwork/QNetworkRequest>
 
 QString hwid = "WWpOS2RtTXpRakZaTWpscVpGZGtNV0ZFVWpSa1ZFNXpaVmMwUFE9PQ==";
-// Bu bir hwid adresi değildir. Sadece sunucu ile aradaki bağlantıyı sağlayacak bir şifre gibi görebilirsiniz.
-// Siz kendi hwid'inizi oluşturan fonksiyonunuzdan çıkan string ile sunucunuzdaki hwid'i eşleştiriceksiniz.
+// Bu bir "hwid" değildir. Sadece sunucu ile aradaki bağlantıyı sağlayacak bir şifre gibi düşünün.
+// Siz kendi hwid'nizi oluşturan fonksiyonunuzdan çıkan string ile sunucunuzdaki hwid'i eşleştiriceksiniz.
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -76,7 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
               }
           }
 
-        // Sonuç olarak verileri çekmiş oluyoruz. Burayı geçiyorum while, for döngüleri ile verileri çekiyoruz. Çok bir şey yok.
+        // Sonuç olarak verileri çekmiş oluyoruz. Burayı geçiyorum döngüleri kullanarak verileri çekiyoruz. Anlatılacak pek bir şey yok.
 
         ui->pushButton_4->setText(lUyelikDurumu); // Ve burada da Üyelik durumumuzu formumuza geçiriyoruz.
         ui->pushButton_6->setText(lTest); // Aynı şekilde Test yazımızı da geçiriyoruz.
