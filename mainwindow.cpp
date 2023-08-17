@@ -19,7 +19,7 @@
 #include <QtNetwork/QNetworkReply>
 #include <QtNetwork/QNetworkRequest>
 
-QString hwid = "WWpOS2RtTXpRakZaTWpscVpGZGtNV0ZFVWpSa1ZFNXpaVmMwUFE9PQ==";
+QString hwid = "definitelyarealhwid123";
 // Bu bir "hwid" değildir. Sadece sunucu ile aradaki bağlantıyı sağlayacak bir şifre gibi düşünün.
 // Siz kendi hwid'nizi oluşturan fonksiyonunuzdan çıkan string ile sunucunuzdaki hwid'i eşleştiriceksiniz.
 
@@ -51,15 +51,15 @@ MainWindow::MainWindow(QWidget *parent)
         QString lUyelikDurumu; // Üyelik durumumuzu veritabanından buraya tanımlayacağız.
         QString lTest; // Örnek amaçlı olarak veritabanından test yazısını da buraya tanımlayacağız.
 
-        QString ExecuteSQL = "SELECT lUyelikDurumu, lTest FROM data WHERE hwid = '" + lHwid + "'"; // SQL işlemini gerçekleştiriyoruz.
-        //Bu satırda kısaca "lUyelikDurumu" ve "lTest"i, xorui tablosunun içindeki "hwid" ile bu bilgisayardaki hwidi eşleşen kısmın içinden seçip SQL gerçekleştirme tanımlamasına geçir yazıyor.
+        QString ExecuteSQL = "SELECT lUyelikDurumu, lTest FROM data WHERE hwid = '" + lHwid + "'"; // SQL sorgumuzun stringini oluşturuyoruz.
+        //Bu satırda kısaca "lUyelikDurumu" ve "lTest"i, xorui tablosunun içindeki "hwid" ile bizim hwidimizin eşleştiği sorgu sonucunu getiriyor.
 
         QSqlQuery qry; // Sql sorgumuzu oluşturuyoruz.
 
-        qry.prepare(ExecuteSQL);
-        if( !qry.exec() )
+        qry.prepare(ExecuteSQL); // SQL sorgumuzun stringini sql sorgumuzla birleştiriyoruz.
+        if( !qry.exec() ) // Eğer sorgu çalışmadıysa 
             qDebug() << qry.lastError();
-          else
+          else // Eğer sorgu çalıştıysa
           {
         QSqlRecord rec = qry.record();
           int cols = rec.count();
@@ -76,7 +76,7 @@ MainWindow::MainWindow(QWidget *parent)
               }
           }
 
-        // Sonuç olarak verileri çekmiş oluyoruz. Burayı geçiyorum döngüleri kullanarak verileri çekiyoruz. Anlatılacak pek bir şey yok.
+        // Sonuç olarak verileri çekmiş oluyoruz.
 
         ui->pushButton_4->setText(lUyelikDurumu); // Ve burada da Üyelik durumumuzu formumuza geçiriyoruz.
         ui->pushButton_6->setText(lTest); // Aynı şekilde Test yazımızı da geçiriyoruz.
@@ -84,7 +84,7 @@ MainWindow::MainWindow(QWidget *parent)
 }
 
 // Hwid kopyalama butonunun görevi burası.
-void MainWindow::on_pushButton_5_clicked() // Burayı pushButton5'e sağ tıklayıp Go to slot diyip clicked eventiyle oluşturuyoruz elle böyle bir void açmaya kalkmayın.
+void MainWindow::on_pushButton_5_clicked()
 {
     QClipboard *clip = QApplication::clipboard(); // Kopyalama Panomuzu tanımlıyoruz.
     QString input = ui->hwidText->text(); // Input = Hwid olarak tanımlıyoruz.
